@@ -35,8 +35,6 @@ class CategoriesController < ApplicationController
         render action: 'new'
       end
     end
-
-
   end
 
   def update
@@ -49,7 +47,6 @@ class CategoriesController < ApplicationController
         render action: 'edit'
       end
     end
-
   end
 
   def destroy
