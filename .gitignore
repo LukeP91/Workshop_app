@@ -28,3 +28,7 @@ local.local.*
 
 # Ignore application configuration
 /config/application.yml
+
+#ignore Sublime Project files
+*.sublime-project
+*.sublime-workspace
