@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
 
   def new
     if !current_user.admin?
-      redirect_to new_user_session_path
+      redirect_to new_user_session_path, notice: 'Only admin can add catergories'
     end
   end
 
