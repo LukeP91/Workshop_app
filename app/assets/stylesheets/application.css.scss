@@ -1,1 +1,80 @@
 @import "bootstrap";
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+/* universal */
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+.btn {
+  margin:5px;
+}
+
+.jumbotron {
+  background-color: white;
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: $gray-light;
+  }
+  p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+  }
+}
+
+.panel-primary{
+
+  .panel-body {
+     padding: 5px;
+    padding-left: 15px;
+  }
+  .panel-footer {
+    padding: 5px;
+    padding-left: 15px;
+  }
+  p {
+    padding: 5px;
+    margin: 0px
+  }
+}
+/* header */
+
+span.navbar-brand {
+  float: left;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  text-aligne: middle;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}

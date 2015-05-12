@@ -1,7 +1,9 @@
 %h1 Listing products
-
-%table
-  %tr
+%p
+  %b Name:
+  = category.name
+%table.table.table-hover
+  %tr.active
     %th Title
     %th Description
     %th Price
@@ -14,9 +16,12 @@
       %td= product.title
       %td= product.description
       %td= product.price
-      %td= link_to 'Show', category_product_path(product.category, product)
+      %td= link_to 'Show', category_product_path(product.category, product), class: 'btn btn-success btn-block btn-sm'
       -if current_user && current_user = product.user
-        %td= link_to 'Edit', edit_category_product_path(product.category, product)
-        %td= link_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Edit', edit_category_product_path(product.category, product), class: 'btn btn-info btn-block btn-sm'
+        %td= link_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-block btn-sm'
 
+- if current_user
+  = link_to 'New', category, class: 'btn btn-success'
+= link_to 'Back', categories_path, class: 'btn btn-primary'
 %br

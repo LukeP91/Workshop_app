@@ -16,12 +16,15 @@
   = product.category.name
 
 - if current_user
-  %h3 Reviews
-  = render 'reviews/form'
+  .panel.panel-default
+    .panel-heading
+      %h3 Reviews
+    .panel-body
+      = render 'reviews/form'
 
-= render reviews
+      = render reviews
 
 -if current_user && current_user.id = product.user_id
-  = link_to 'Edit', edit_category_product_path(category.id, product.id)
+  = link_to 'Edit', edit_category_product_path(category.id, product.id), class: 'btn btn-primary'
   \|
 = link_to 'Back', category_products_path, class: 'btn btn-primary'

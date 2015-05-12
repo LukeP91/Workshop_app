@@ -15,12 +15,13 @@
           %span.navbar-brand #{AppConfig.workshops_name}
         %p.navbar-text.navbar-right
           -if current_user
-            = "#{current_user.firstname} #{current_user.lastname}"
-            = link_to 'Logout', destroy_user_session_path, :method => :delete
+            = link_to "#{current_user.firstname} #{current_user.lastname}", destroy_user_session_path, :method => :delete, class: 'btn btn-info'
+            = link_to 'Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-danger'
           - else
-            = link_to 'Sign in', new_user_session_path
-            = link_to 'Sign up', new_user_registration_path
-    .container-fluid
-      .row
-        .col-lg-12
-          = yield
+            = link_to 'Sign in', new_user_session_path, class: 'btn btn-success'
+            = link_to 'Sign up', new_user_registration_path, class: 'btn btn-info'
+    .jumbotron
+      .container-fluid
+        .row
+          .col-lg-12
+            = yield
