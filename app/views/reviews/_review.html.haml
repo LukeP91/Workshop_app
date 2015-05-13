@@ -3,5 +3,5 @@
     %p= review.content
   .panel-heading
     %p
-      %b= review.rating
-      %em= review.author
+      %b= "Rating: #{review.rating}"
+      %em= "by #{review.author}"

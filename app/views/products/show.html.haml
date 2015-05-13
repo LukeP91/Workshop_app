@@ -1,19 +1,21 @@
 %p#notice= notice
 %p#error= flash[:error]
 
-%p
-  %b Title:
-  = product.title
-%p
-  %b Description:
-  = product.description
-%p
-  %b Price:
-  = product.price
+.product.jumbotron
+  %h3
+    %b Category:
+    = product.category.name
+  .panel.panel-primary
+    .panel-heading
+      = product.title
+    .panel-body
+      = product.description
+    .panel-footer
+      %p
+        %b Price:
+        = product.price
 
-%p
-  %b Category
-  = product.category.name
+
 
 - if current_user
   .panel.panel-default
@@ -22,7 +24,7 @@
     .panel-body
       = render 'reviews/form'
 
-      = render reviews
+= render reviews
 
 -if current_user && current_user.id = product.user_id
   = link_to 'Edit', edit_category_product_path(category.id, product.id), class: 'btn btn-primary'

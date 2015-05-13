@@ -1,0 +1,28 @@
+.profile
+  .row
+    .col-md-4
+      %h1
+        = gravatar_for current_user
+      %h1
+        = current_user.firstname
+        = current_user.lastname
+      %p
+        = current_user.email
+      %p
+        = "Registerd at: #{current_user.created_at.to_s(:custom_datetime)}"
+      %p
+        = link_to "Edit profile", edit_user_registration_path(current_user)
+      %p
+        = link_to "Change gravatar", "http://gravatar.com/emails"
+    .col-md-8
+      -@reviews.each do |review|
+        .panel.panel-primary
+          .panel-body
+            %p= review.content
+          .panel-heading
+            %p
+              %b= "Rating: #{review.rating}"
+              %em= "by #{ current_user.firstname} #{current_user.lastname}"
+              %em= review.created_at.to_s(:custom_datetime)
+
+= link_to 'Back', categories_path, class: 'btn btn-primary'
